@@ -1,6 +1,4 @@
 
---startup test to confirm second init.lua is caled in
-print('second hello')
 
 --list of required configs
 --keybindings

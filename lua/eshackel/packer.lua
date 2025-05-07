@@ -9,7 +9,7 @@ return require('packer').startup(function(use)
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.x',
 		-- or                            , branch = '0.1.x',
-	requires = { {'nvim-lua/plenary.nvim'} }
+		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 	use({
 		'rose-pine/neovim',
@@ -25,5 +25,13 @@ return require('packer').startup(function(use)
 	use('nvim-treesitter/playground')
 	use('mbbill/undotree')
 	use('tpope/vim-fugitive')
-end)
+	use{
+		'neovim/nvim-lspconfig',
+			config = function()
+				require'lspconfig'.lua_ls.setup{}
+			end,
+
+		}
+
+	end)
 
